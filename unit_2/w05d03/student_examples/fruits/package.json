@@ -1,0 +1,22 @@
+{
+  "name": "fruits",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "'"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+<<<<<<< HEAD
+    "ejs": "^2.7.4",
+=======
+    "ejs": "^3.1.5",
+>>>>>>> 7c241fdfc6bec34b0724e4410501e2c42e984b54
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,10 @@
+body{
+  width: 450px;
+}
+
+.box{
+  height: 50px;
+  width: 50px;
+  border: 1px solid blue;
+  display: inline-block;
+}

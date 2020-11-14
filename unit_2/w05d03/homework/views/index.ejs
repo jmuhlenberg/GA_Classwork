@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Budgtr Home Page</title>
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Budgtr Home Page</h1>
+      <%let bankAccount = 0%>
+      <%for(b=0; b<allBudgetItems.length-1; b++){bankAccount+=allBudgetItems[b].amount}%>
+      <span>Bank Account Amount: $ </span><%=bankAccount%>
+        <table>
+          <% for(x=0; x<allBudgetItems.length; x++){%>
+            <tr>
+              <td>
+                <%=allBudgetItems[x].date%>
+              </td>
+              <td>
+                <a href="budgets/<%=x%>"><%=allBudgetItems[x].name%>
+              </td>
+              <td>
+                <%=allBudgetItems[x].amount%>
+              </td>
+            </tr>
+          <%}%>
+        </table>
+        <a class='button' href="/budgets/new">- make a new budget item -</a>
+      </div>
+  </body>
+</html>

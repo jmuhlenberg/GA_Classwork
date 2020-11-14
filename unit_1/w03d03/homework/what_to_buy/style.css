@@ -1,0 +1,85 @@
+*{
+  font-family: sans-serif;
+}
+
+body{
+  text-align: center;
+  margin-top: 10%;
+}
+
+.container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.ul-div{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+ul{
+  width: 40%;
+}
+
+ul div{
+  display: flex;
+  justify-content: space-around;
+}
+
+.buy-list{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.bought-list{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.buy-list div{
+  background-color: lightgreen;
+  height: 100px;
+  width: 150px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  box-shadow: 3px 3px rgba(0,0,0,0.3);
+  border: 1px solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.bought-list div{
+ background-color: red;
+ height: 100px;
+ width: 150px;
+ border-radius: 5px;
+ display: flex;
+ justify-content: center;
+ flex-flow: column nowrap;
+ box-shadow: 3px 3px rgba(0,0,0,0.3);
+ border: 1px solid black;
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+
+.item{
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart{
+ margin-right: 33%;
+ margin-left: 33%;
+ width: 50px;
+ padding-right: 1px;
+ padding-left: 1px;
+ margin-top: 10px;
+}

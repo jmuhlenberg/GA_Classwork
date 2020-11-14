@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create a new budget item</h1>
+      <a class='button' href="/budgets">- home -</a>
+      <br><br>
+      <form action="/budgets" method="POST">
+        Date: <input type='date' name='date'/><br>
+        Name: <input type='text' name='name' placeholder="Name"/><br>
+        From: <input type='text' name='from' placeholder="Institution"/><br>
+        Amount: $ <input type="number" name="amount" placeholder="0"><br>
+        Tags: <input type='text' name='tags' placeholder="Enter tags separated by commas"/><br>
+        <input type='submit' value='- Create -'/>
+      </form>
+    </div>
+  </body>
+</html>

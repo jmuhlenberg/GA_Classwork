@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokedex | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Pokedex</h1>
+        <a href="/new" class='newPoke'>add new pokemon</a>
+      </header>
+      <div class="pokedex">
+          <% for(x=0; x<10; x++){%>
+            <div class="pokemon">
+              <span><a href="/<%=x%>"><%=data[x].name%></a></span>
+              <img src="<%=data[x].img%>" alt="<%=data[x].name%>">
+              <div class="actions">
+                <a href="/<%=x%>/edit" class='button'>edit</a>
+                <form action="/<%=x%>?_method=DELETE" method="POST">
+            			<input type="submit" value="DELETE" class='button'/>
+            		</form>
+              </div>
+            </div>
+          <%}%>
+      </div>
+    </div>
+  </body>
+</html>

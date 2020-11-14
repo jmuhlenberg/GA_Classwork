@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Budgtr | <%=selectedBudgetItem.name%></title>
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1><%=selectedBudgetItem.name%></h1>
+      <br>
+      <a class='button' href="/budgets">- home -</a>
+      <br>
+      <h5>date</h5>
+      <p><%=selectedBudgetItem.date%></p>
+      <h5>name</h5>
+      <p><%=selectedBudgetItem.name%></p>
+      <h5>from</h5>
+      <p><%=selectedBudgetItem.from%></p>
+      <h5>amount</h5>
+      <p>$<%=selectedBudgetItem.amount%></p>
+      <h5>tags</h5>
+      <p><%=selectedBudgetItem.tags%></p>
+    </div>
+  </body>
+</html>

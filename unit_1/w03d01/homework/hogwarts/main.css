@@ -1,0 +1,72 @@
+*{
+
+}
+
+body{
+  background-color: #5d5d5d;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+h1{
+  font-size: 3em;
+  border-bottom: 3px solid black;
+  color: #000000;
+  text-shadow: 2px 2px #946b2d;
+}
+
+h2{
+  font-family: 'Dancing Script', cursive;
+}
+
+h3{
+  color: #0e1a40;
+  font-size: 2em;
+  text-shadow: 2px 2px 	#222f5b;
+}
+
+.cat{
+  font-family: fantasy;
+}
+
+ol{
+  padding-inline-start: 0;
+}
+
+li{
+  list-style: none;
+}
+
+.secret{
+  opacity: 0.5;
+}
+
+table, th, td{
+  border: 1px solid gray;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cabbage{
+  color: chartreuse;
+}
+
+.hide{
+  display: none;
+}
+
+.show-button{
+  height: 50px;
+  width: 100px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.show_button:hover + .hide{
+  display: block;
+  color: white;
+}

@@ -1,0 +1,115 @@
+*{
+  /* border: 2px solid gold; */
+  font-family: sans-serif;
+}
+
+/*  VARIABLES  */
+:root{
+  --boxSize: 100px;
+  --markSize: calc(var(--boxSize)*.9)
+}
+
+body{
+  margin: 0;
+}
+
+.board{
+  display: grid;
+  grid-template-columns: repeat(3,auto);
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+h1{
+  font-size: 2.1em;
+  text-align: center;
+}
+
+h2{
+  font-size: 1.2em;
+}
+
+.tally{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+  margin-top: 5vh;
+}
+
+.box{
+  width: var(--boxSize);
+  height: var(--boxSize);
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15vw;
+  cursor: pointer;
+}
+
+.box.x, .box.o{
+  cursor: not-allowed;
+}
+
+/* remove the top border */
+.box:first-child, .box:nth-child(2), .box:nth-child(3){
+  border-top: none;
+}
+
+/* remove right border */
+.box:nth-child(3n+3){
+  border-right: none;
+}
+
+/* remove bottom border */
+.box:nth-child(7), .box:nth-child(8), .box:last-child{
+  border-bottom: none;
+}
+
+/* remove left border */
+.box:nth-child(3n+1){
+  border-left: none;
+}
+
+.game-end-message{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.9);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-end-message.show{
+  display: flex;
+}
+
+.end-message-text{
+  color: white;
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+#restartBtn{
+  height: 2em;
+  width: 6em;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+#restartBtn:hover{
+  background-color: black;
+  color: white;
+  border-color: white;
+  cursor: pointer;
+}

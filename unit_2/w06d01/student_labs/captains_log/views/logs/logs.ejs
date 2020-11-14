@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include ('../partials/head.ejs') %>
+    </head>
+    <body>
+        <nav>
+          <%- include ('../partials/nav.ejs')%>
+        </nav>
+        <h1>Captain's Logs</h1>
+        <ul>
+            <% for(let i = 0; i < logs.length; i++){ %>
+                <li><a href='/logs/<%=logs[i].id%>'><%=logs[i].title%></a></li>
+            <% } %>
+        </ul>
+    </body>
+</html>

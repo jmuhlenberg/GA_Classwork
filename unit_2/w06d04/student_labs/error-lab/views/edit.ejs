@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
+    <body>
+        <h1>Edit Pumpkin Page</h1>
+        <%- include('./partials/nav.ejs') %>
+        <form action="/pumpkins/<%=pumpkin.id%>?_method=PUT" method="POST">
+            Description: <input type="text" name="description" value="<%=pumpkin.description%>"/><br/>
+            Color: <input type="text" name="color" value="<%=pumpkin.color%>"/><br/>
+            Is Ready to Ship:
+                <input
+                    type="checkbox"
+                    name="readyToShip"
+                    <%if(pumpkin.readyToShip === true){ %>
+                        checked
+                    <% } %>
+                    />
+                <br/>
+            <input type="submit" value="Submit Changes" />
+        </form>
+        <%- include('./partials/darkmode.ejs')%>
+    </body>
+</html>

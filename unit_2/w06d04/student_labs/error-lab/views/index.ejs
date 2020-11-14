@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
+    <body>
+      <%- include('./partials/nav.ejs') %>
+      <div class="container">
+        <ul>
+          <% for(let pumpkin of pumpkins) { %>
+            <li>
+              <a href="/pumpkins/<%=pumpkin._id%>">
+                <%= pumpkin.description %>
+            </li>
+         <% } %>
+        </ul>
+      </div>
+      <%- include('./partials/darkmode.ejs')%>
+    </body>
+</html>

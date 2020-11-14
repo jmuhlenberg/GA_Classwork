@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Biscoff Index</title>
+  </head>
+  <body>
+    <h1>Biscoff Home Page</h1>
+      <ul>
+        <% for(x=0; x<allBakedGoods.length; x++){%>
+          <li>
+            <a href="bakedgoods/<%=x%>"><%=allBakedGoods[x].name%></a><span> $<%=allBakedGoods[x].price%></span>
+          </li>
+        <%}%>
+      </ul>
+      <a href="/bakedgoods/new">Make a new baked good</a>
+  </body>
+</html>

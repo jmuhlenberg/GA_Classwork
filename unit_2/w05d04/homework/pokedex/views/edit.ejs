@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokedex | Edit <%=data.name%></title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Pokedex - Edit <%=data.name%></h1>
+        <a href="/" class='newPoke'>home</a>
+      </header>
+      <div class="pokedex">
+        <form action="/<%=index%>" method="PUT">
+          <img src="<%=data.img%>" alt="<%=data.name%>">
+          <h3>Name: </h3><input type="text" name="name" value="<%=data.name%>" /><br/>
+          <h3>Type: </h3><input type="text" name="type" value="<%=data.type%>"/><br/><br/>
+          <h3>Height: </h3><input type="text" name="height" value="<%=data.misc.height%>"/>
+          <h3>Weight: </h3><input type="text" name="weight" value="<%=data.misc.weight%>"/>
+          <input type="submit" value="Submit Changes to Pokemon"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

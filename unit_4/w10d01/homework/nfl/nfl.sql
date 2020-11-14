@@ -1,0 +1,856 @@
+-- 1. List the names of all NFL teams'
+SELECT name FROM teams;
+-- -[ RECORD 1 ]--------------
+-- name | Buffalo Bills
+-- -[ RECORD 2 ]--------------
+-- name | Miami Dolphins
+-- -[ RECORD 3 ]--------------
+-- name | New England Patriots
+-- -[ RECORD 4 ]--------------
+-- name | New York Jets
+-- -[ RECORD 5 ]--------------
+-- name | Baltimore Ravens
+-- -[ RECORD 6 ]--------------
+-- name | Cincinnati Bengals
+-- -[ RECORD 7 ]--------------
+-- name | Cleveland Browns
+-- -[ RECORD 8 ]--------------
+-- name | Pittsburgh Steelers
+-- -[ RECORD 9 ]--------------
+-- name | Houston Texans
+-- -[ RECORD 10 ]-------------
+-- name | Indianapolis Colts
+-- -[ RECORD 11 ]-------------
+-- name | Jacksonville Jaguars
+-- -[ RECORD 12 ]-------------
+-- name | Tennessee Titans
+-- -[ RECORD 13 ]-------------
+-- name | Denver Broncos
+-- -[ RECORD 14 ]-------------
+-- name | Kansas City Chiefs
+-- -[ RECORD 15 ]-------------
+-- name | Oakland Raiders
+-- -[ RECORD 16 ]-------------
+-- name | San Diego Chargers
+-- -[ RECORD 17 ]-------------
+-- name | Dallas Cowboys
+-- -[ RECORD 18 ]-------------
+-- name | New York Giants
+-- -[ RECORD 19 ]-------------
+-- name | Philadelphia Eagles
+-- -[ RECORD 20 ]-------------
+-- name | Washington Redskins
+-- -[ RECORD 21 ]-------------
+-- name | Chicago Bears
+-- -[ RECORD 22 ]-------------
+-- name | Detroit Lions
+-- -[ RECORD 23 ]-------------
+-- name | Green Bay Packers
+-- -[ RECORD 24 ]-------------
+-- name | Minnesota Vikings
+-- -[ RECORD 25 ]-------------
+-- name | Atlanta Falcons
+-- -[ RECORD 26 ]-------------
+-- name | Carolina Panthers
+-- -[ RECORD 27 ]-------------
+-- name | New Orleans Saints
+-- -[ RECORD 28 ]-------------
+-- name | Tampa Bay Buccaneers
+-- -[ RECORD 29 ]-------------
+-- name | Arizona Cardinals
+-- -[ RECORD 30 ]-------------
+-- name | St. Louis Rams
+-- -[ RECORD 31 ]-------------
+-- name | San Francisco 49ers
+-- -[ RECORD 32 ]-------------
+-- name | Seattle Seahawks
+
+
+-- 2. List the stadium name and head coach of all NFC teams
+SELECT stadium, head_coach FROM teams WHERE conference = 'NFC';
+-- -[ RECORD 1 ]-----------------------------
+-- stadium    | AT&T Stadium
+-- head_coach | Jason Garrett
+-- -[ RECORD 2 ]-----------------------------
+-- stadium    | MetLife Stadium
+-- head_coach | Tom Coughlin
+-- -[ RECORD 3 ]-----------------------------
+-- stadium    | Lincoln Financial Field
+-- head_coach | Chip Kelly
+-- -[ RECORD 4 ]-----------------------------
+-- stadium    | FedExField
+-- head_coach | Jay Gruden
+-- -[ RECORD 5 ]-----------------------------
+-- stadium    | Soldier Field
+-- head_coach | Marc Trestman
+-- -[ RECORD 6 ]-----------------------------
+-- stadium    | Ford Field
+-- head_coach | Jim Caldwell
+-- -[ RECORD 7 ]-----------------------------
+-- stadium    | Lambeau Field
+-- head_coach | Mike McCarthy
+-- -[ RECORD 8 ]-----------------------------
+-- stadium    | TCF Bank Stadium
+-- head_coach | Mike Zimmer
+-- -[ RECORD 9 ]-----------------------------
+-- stadium    | Georgia Dome
+-- head_coach | Mike Smith
+-- -[ RECORD 10 ]----------------------------
+-- stadium    | Bank of America Stadium
+-- head_coach | Ron Rivera
+-- -[ RECORD 11 ]----------------------------
+-- stadium    | Mercedes-Benz Superdome
+-- head_coach | Sean Payton
+-- -[ RECORD 12 ]----------------------------
+-- stadium    | Raymond James Stadium
+-- head_coach | Lovie Smith
+-- -[ RECORD 13 ]----------------------------
+-- stadium    | University of Phoenix Stadium
+-- head_coach | Bruce Arians
+-- -[ RECORD 14 ]----------------------------
+-- stadium    | Edward Jones Dome
+-- head_coach | Jeff Fisher
+-- -[ RECORD 15 ]----------------------------
+-- stadium    | Levis Stadium
+-- head_coach | Jim Harbaugh
+-- -[ RECORD 16 ]----------------------------
+-- stadium    | CenturyLink Field
+-- head_coach | Pete Carroll
+
+
+-- 3. List the head coaches of the AFC South
+SELECT head_coach FROM teams WHERE conference = 'AFC' AND division = 'South';
+-- -[ RECORD 1 ]--------------
+-- head_coach | Bill OBrien
+-- -[ RECORD 2 ]--------------
+-- head_coach | Chuck Pagano
+-- -[ RECORD 3 ]--------------
+-- head_coach | Gus Bradley
+-- -[ RECORD 4 ]--------------
+-- head_coach | Ken Whisenhunt
+
+
+-- 4. The total number of players in the NFL
+SELECT COUNT(*) FROM players;
+-- -[ RECORD 1 ]
+-- count | 1532
+
+
+-- 5. The team names and head coaches of the NFC North and AFC East
+SELECT head_coach, name FROM teams WHERE conference = 'NFC' AND division = 'North';
+-- -[ RECORD 1 ]-----------------
+-- head_coach | Marc Trestman
+-- name       | Chicago Bears
+-- -[ RECORD 2 ]-----------------
+-- head_coach | Jim Caldwell
+-- name       | Detroit Lions
+-- -[ RECORD 3 ]-----------------
+-- head_coach | Mike McCarthy
+-- name       | Green Bay Packers
+-- -[ RECORD 4 ]-----------------
+-- head_coach | Mike Zimmer
+-- name       | Minnesota Vikings
+
+SELECT head_coach, name FROM teams WHERE conference = 'AFC' AND division = 'East';
+-- -[ RECORD 1 ]--------------------
+-- head_coach | Doug Marrone
+-- name       | Buffalo Bills
+-- -[ RECORD 2 ]--------------------
+-- head_coach | Joe Philbin
+-- name       | Miami Dolphins
+-- -[ RECORD 3 ]--------------------
+-- head_coach | Bill Belichick
+-- name       | New England Patriots
+-- -[ RECORD 4 ]--------------------
+-- head_coach | Rex Ryan
+-- name       | New York Jets
+
+-- 6. The 50 players with the highest salaries
+SELECT salary, name FROM players ORDER BY salary DESC LIMIT 50;
+-- -[ RECORD 1 ]-------------------
+-- salary | 18000000
+-- name   | Peyton Manning
+-- -[ RECORD 2 ]-------------------
+-- salary | 15760000
+-- name   | Drew Brees
+-- -[ RECORD 3 ]-------------------
+-- salary | 14035000
+-- name   | Dwight Freeney
+-- -[ RECORD 4 ]-------------------
+-- salary | 14000000
+-- name   | Elvis Dumervil
+-- -[ RECORD 5 ]-------------------
+-- salary | 12500000
+-- name   | Michael Vick
+-- -[ RECORD 6 ]-------------------
+-- salary | 12000000
+-- name   | Sam Bradford
+-- -[ RECORD 7 ]-------------------
+-- salary | 11619850
+-- name   | Jared Allen
+-- -[ RECORD 8 ]-------------------
+-- salary | 11500000
+-- name   | Matt Ryan
+-- -[ RECORD 9 ]-------------------
+-- salary | 11500000
+-- name   | Matthew Stafford
+-- -[ RECORD 10 ]------------------
+-- salary | 11250000
+-- name   | Tamba Hali
+-- -[ RECORD 11 ]------------------
+-- salary | 11200000
+-- name   | Jake Long
+-- -[ RECORD 12 ]------------------
+-- salary | 11000000
+-- name   | Nnamdi Asomugha
+-- -[ RECORD 13 ]------------------
+-- salary | 11000000
+-- name   | Trent Williams
+-- -[ RECORD 14 ]------------------
+-- salary | 11000000
+-- name   | Vincent Jackson
+-- -[ RECORD 15 ]------------------
+-- salary | 10600000
+-- name   | Cliff Avril
+-- -[ RECORD 16 ]------------------
+-- salary | 10600000
+-- name   | Calais Campbell
+-- -[ RECORD 17 ]------------------
+-- salary | 10500000
+-- name   | Joe Thomas
+-- -[ RECORD 18 ]------------------
+-- salary | 10431000
+-- name   | Brent Grimes
+-- -[ RECORD 19 ]------------------
+-- salary | 10400000
+-- name   | Peyton Manning (buyout)
+-- -[ RECORD 20 ]------------------
+-- salary | 10310000
+-- name   | Chris Long
+-- -[ RECORD 21 ]------------------
+-- salary | 10200000
+-- name   | Philip Rivers
+-- -[ RECORD 22 ]------------------
+-- salary | 10000000
+-- name   | Jason Smith
+-- -[ RECORD 23 ]------------------
+-- salary | 9900000
+-- name   | David Harris
+-- -[ RECORD 24 ]------------------
+-- salary | 9515000
+-- name   | Wes Welker
+-- -[ RECORD 25 ]------------------
+-- salary | 9500000
+-- name   | Davin Joseph
+-- -[ RECORD 26 ]------------------
+-- salary | 9443000
+-- name   | Dwayne Bowe
+-- -[ RECORD 27 ]------------------
+-- salary | 9400000
+-- name   | Asante Samuel
+-- -[ RECORD 28 ]------------------
+-- salary | 9300000
+-- name   | Brandon Marshall
+-- -[ RECORD 29 ]------------------
+-- salary | 9250000
+-- name   | Ndamukong Suh
+-- -[ RECORD 30 ]------------------
+-- salary | 9000000
+-- name   | Tony Romo
+-- -[ RECORD 31 ]------------------
+-- salary | 8900000
+-- name   | Julius Peppers
+-- -[ RECORD 32 ]------------------
+-- salary | 8800000
+-- name   | Anthony Spencer
+-- -[ RECORD 33 ]------------------
+-- salary | 8800000
+-- name   | Karlos Dansby
+-- -[ RECORD 34 ]------------------
+-- salary | 8500000
+-- name   | Jordan Gross
+-- -[ RECORD 35 ]------------------
+-- salary | 8005000
+-- name   | Tyson Jackson
+-- -[ RECORD 36 ]------------------
+-- salary | 8000000
+-- name   | Adrian Peterson
+-- -[ RECORD 37 ]------------------
+-- salary | 8000000
+-- name   | Champ Bailey
+-- -[ RECORD 38 ]------------------
+-- salary | 8000000
+-- name   | Chris Johnson
+-- -[ RECORD 39 ]------------------
+-- salary | 8000000
+-- name   | Aaron Rodgers
+-- -[ RECORD 40 ]------------------
+-- salary | 7900000
+-- name   | Jason Peters
+-- -[ RECORD 41 ]------------------
+-- salary | 7750000
+-- name   | Eric Wright
+-- -[ RECORD 42 ]------------------
+-- salary | 7750000
+-- name   | Steve Smith
+-- -[ RECORD 43 ]------------------
+-- salary | 7750000
+-- name   | Santonio Holmes
+-- -[ RECORD 44 ]------------------
+-- salary | 7700000
+-- name   | Jay Cutler
+-- -[ RECORD 45 ]------------------
+-- salary | 7700000
+-- name   | Matt Forte
+-- -[ RECORD 46 ]------------------
+-- salary | 7700000
+-- name   | Ray Rice
+-- -[ RECORD 47 ]------------------
+-- salary | 7500000
+-- name   | Brian Urlacher
+-- -[ RECORD 48 ]------------------
+-- salary | 7250000
+-- name   | Johnathan Joseph
+-- -[ RECORD 49 ]------------------
+-- salary | 7200000
+-- name   | Gary Brackett
+-- -[ RECORD 50 ]------------------
+-- salary | 7200000
+-- name   | Ed Reed
+
+
+
+-- 7. The average salary of all NFL players
+SELECT AVG(salary) FROM players;
+-- -[ RECORD 1 ]-------------
+-- avg | 1579692.539817232376
+
+
+-- 8. The names and positions of players with a salary above 10_000_000
+SELECT name, position FROM players WHERE salary > 10000000;
+-- -[ RECORD 1 ]---------------------
+-- name     | Jake Long
+-- position | T
+-- -[ RECORD 2 ]---------------------
+-- name     | Joe Thomas
+-- position | T
+-- -[ RECORD 3 ]---------------------
+-- name     | Dwight Freeney
+-- position | DE
+-- -[ RECORD 4 ]---------------------
+-- name     | Peyton Manning (buyout)
+-- position | QB
+-- -[ RECORD 5 ]---------------------
+-- name     | Peyton Manning
+-- position | QB
+-- -[ RECORD 6 ]---------------------
+-- name     | Elvis Dumervil
+-- position | DE
+-- -[ RECORD 7 ]---------------------
+-- name     | Tamba Hali
+-- position | DE
+-- -[ RECORD 8 ]---------------------
+-- name     | Philip Rivers
+-- position | QB
+-- -[ RECORD 9 ]---------------------
+-- name     | Michael Vick
+-- position | QB
+-- -[ RECORD 10 ]--------------------
+-- name     | Nnamdi Asomugha
+-- position | CB
+-- -[ RECORD 11 ]--------------------
+-- name     | Trent Williams
+-- position | T
+-- -[ RECORD 12 ]--------------------
+-- name     | Matthew Stafford
+-- position | QB
+-- -[ RECORD 13 ]--------------------
+-- name     | Cliff Avril
+-- position | DE
+-- -[ RECORD 14 ]--------------------
+-- name     | Jared Allen
+-- position | DE
+-- -[ RECORD 15 ]--------------------
+-- name     | Matt Ryan
+-- position | QB
+-- -[ RECORD 16 ]--------------------
+-- name     | Brent Grimes
+-- position | CB
+-- -[ RECORD 17 ]--------------------
+-- name     | Drew Brees
+-- position | QB
+-- -[ RECORD 18 ]--------------------
+-- name     | Vincent Jackson
+-- position | WR
+-- -[ RECORD 19 ]--------------------
+-- name     | Calais Campbell
+-- position | DE
+-- -[ RECORD 20 ]--------------------
+-- name     | Sam Bradford
+-- position | QB
+-- -[ RECORD 21 ]--------------------
+-- name     | Chris Long
+-- position | DE
+
+
+-- 9. The player with the highest salary in the NFL
+SELECT name FROM players ORDER BY salary DESC LIMIT 1;
+-- -[ RECORD 1 ]--------
+-- name | Peyton Manning
+
+
+-- 10. The name and position of the first 100 players with the lowest salaries
+SELECT name, position FROM players ORDER BY salary ASC LIMIT 100;
+-- -[ RECORD 1 ]--------------------
+-- name     | Phillip Dillard
+-- position |
+-- -[ RECORD 2 ]--------------------
+-- name     | Eric Kettani
+-- position | RB
+-- -[ RECORD 3 ]--------------------
+-- name     | Austin Sylvester
+-- position | RB
+-- -[ RECORD 4 ]--------------------
+-- name     | Greg Orton
+-- position | WR
+-- -[ RECORD 5 ]--------------------
+-- name     | Jerrod Johnson
+-- position | QB
+-- -[ RECORD 6 ]--------------------
+-- name     | McLeod Bethel-Thompson
+-- position | QB
+-- -[ RECORD 7 ]--------------------
+-- name     | Jonathan Crompton
+-- position | QB
+-- -[ RECORD 8 ]--------------------
+-- name     | Travon Bellamy
+-- position | CB
+-- -[ RECORD 9 ]--------------------
+-- name     | Caleb King
+-- position | RB
+-- -[ RECORD 10 ]-------------------
+-- name     | Mike Mohamed
+-- position | LB
+-- -[ RECORD 11 ]-------------------
+-- name     | Kyle Nelson
+-- position | LS
+-- -[ RECORD 12 ]-------------------
+-- name     | John Malecki
+-- position | G
+-- -[ RECORD 13 ]-------------------
+-- name     | Nathan Bussey
+-- position | LB
+-- -[ RECORD 14 ]-------------------
+-- name     | Robert James
+-- position | LB
+-- -[ RECORD 15 ]-------------------
+-- name     | Markell Carter
+-- position | DE
+-- -[ RECORD 16 ]-------------------
+-- name     | Aaron Lavarias
+-- position | DT
+-- -[ RECORD 17 ]-------------------
+-- name     | Mark Dell
+-- position | WR
+-- -[ RECORD 18 ]-------------------
+-- name     | Ronald Johnson
+-- position | WR
+-- -[ RECORD 19 ]-------------------
+-- name     | Doug Worthington
+-- position | DT
+-- -[ RECORD 20 ]-------------------
+-- name     | Derrick Jones
+-- position | WR
+-- -[ RECORD 21 ]-------------------
+-- name     | Sealver Siliga
+-- position | DT
+-- -[ RECORD 22 ]-------------------
+-- name     | Chase Beeler
+-- position | C
+-- -[ RECORD 23 ]-------------------
+-- name     | Kenny Wiggins
+-- position | T
+-- -[ RECORD 24 ]-------------------
+-- name     | Konrad Reuland
+-- position | TE
+-- -[ RECORD 25 ]-------------------
+-- name     | Michael Wilhoite
+-- position | LB
+-- -[ RECORD 26 ]-------------------
+-- name     | Garrett Chisolm
+-- position | G
+-- -[ RECORD 27 ]-------------------
+-- name     | Juamorris Stewart
+-- position | WR
+-- -[ RECORD 28 ]-------------------
+-- name     | Chad Spann
+-- position | RB
+-- -[ RECORD 29 ]-------------------
+-- name     | Trevis Turner
+-- position | T
+-- -[ RECORD 30 ]-------------------
+-- name     | Justin Medlock
+-- position | KR
+-- -[ RECORD 31 ]-------------------
+-- name     | Armon Binns
+-- position | WR
+-- -[ RECORD 32 ]-------------------
+-- name     | Derek Hall
+-- position | T
+-- -[ RECORD 33 ]-------------------
+-- name     | Shaky Smithson
+-- position | WR
+-- -[ RECORD 34 ]-------------------
+-- name     | Armando Allen
+-- position | RB
+-- -[ RECORD 35 ]-------------------
+-- name     | DAndre Goodwin
+-- position | WR
+-- -[ RECORD 36 ]-------------------
+-- name     | Jeremy Beal
+-- position | DE
+-- -[ RECORD 37 ]-------------------
+-- name     | Brett Brackett
+-- position | TE
+-- -[ RECORD 38 ]-------------------
+-- name     | Shaun Draughn
+-- position | RB
+-- -[ RECORD 39 ]-------------------
+-- name     | John Clay
+-- position | RB
+-- -[ RECORD 40 ]-------------------
+-- name     | Tristan Davis
+-- position | RB
+-- -[ RECORD 41 ]-------------------
+-- name     | Curtis Holcomb
+-- position | CB
+-- -[ RECORD 42 ]-------------------
+-- name     | Jimmy Young
+-- position | WR
+-- -[ RECORD 43 ]-------------------
+-- name     | Kevin Cone
+-- position | WR
+-- -[ RECORD 44 ]-------------------
+-- name     | Cory Nelms
+-- position | CB
+-- -[ RECORD 45 ]-------------------
+-- name     | Ben Guidugli
+-- position | TE
+-- -[ RECORD 46 ]-------------------
+-- name     | David Gilreath
+-- position | WR
+-- -[ RECORD 47 ]-------------------
+-- name     | Dontavia Bogan
+-- position | WR
+-- -[ RECORD 48 ]-------------------
+-- name     | Joe Hastings
+-- position | WR
+-- -[ RECORD 49 ]-------------------
+-- name     | Marshall McFadden
+-- position | LB
+-- -[ RECORD 50 ]-------------------
+-- name     | Kade Weston
+-- position | DT
+-- -[ RECORD 51 ]-------------------
+-- name     | Kyle Hix
+-- position | T
+-- -[ RECORD 52 ]-------------------
+-- name     | Mark LeGree
+-- position | S
+-- -[ RECORD 53 ]-------------------
+-- name     | Mike Hartline
+-- position | QB
+-- -[ RECORD 54 ]-------------------
+-- name     | Jameson Konz
+-- position | WR
+-- -[ RECORD 55 ]-------------------
+-- name     | Tyler Beiler
+-- position |
+-- -[ RECORD 56 ]-------------------
+-- name     | Mike Blanc
+-- position | DT
+-- -[ RECORD 57 ]-------------------
+-- name     | Corbin Bryant
+-- position | DT
+-- -[ RECORD 58 ]-------------------
+-- name     | Michael Jasper
+-- position | DT
+-- -[ RECORD 59 ]-------------------
+-- name     | Mike Rivera
+-- position | LB
+-- -[ RECORD 60 ]-------------------
+-- name     | Pat Devlin
+-- position | QB
+-- -[ RECORD 61 ]-------------------
+-- name     | Jerome Messam
+-- position | RB
+-- -[ RECORD 62 ]-------------------
+-- name     | Jamie McCoy
+-- position | TE
+-- -[ RECORD 63 ]-------------------
+-- name     | Lestar Jean
+-- position | WR
+-- -[ RECORD 64 ]-------------------
+-- name     | Malcolm Williams
+-- position | CB
+-- -[ RECORD 65 ]-------------------
+-- name     | Ricky Sapp
+-- position | DE
+-- -[ RECORD 66 ]-------------------
+-- name     | Rashad Carmichael
+-- position | CB
+-- -[ RECORD 67 ]-------------------
+-- name     | Alex Silvestro
+-- position | DT
+-- -[ RECORD 68 ]-------------------
+-- name     | Adam Weber
+-- position | QB
+-- -[ RECORD 69 ]-------------------
+-- name     | Adam Grant
+-- position | T
+-- -[ RECORD 70 ]-------------------
+-- name     | Jammie Kirlew
+-- position | DE
+-- -[ RECORD 71 ]-------------------
+-- name     | Joe Reitz
+-- position | T
+-- -[ RECORD 72 ]-------------------
+-- name     | Brandon Browner
+-- position | CB
+-- -[ RECORD 73 ]-------------------
+-- name     | Jeff Byers
+-- position | C
+-- -[ RECORD 74 ]-------------------
+-- name     | Jed Collins
+-- position | TE
+-- -[ RECORD 75 ]-------------------
+-- name     | Aaron Berry
+-- position | CB
+-- -[ RECORD 76 ]-------------------
+-- name     | Logan Payne
+-- position | WR
+-- -[ RECORD 77 ]-------------------
+-- name     | Marcus Sherels
+-- position | CB
+-- -[ RECORD 78 ]-------------------
+-- name     | T.J. Conley
+-- position | PR
+-- -[ RECORD 79 ]-------------------
+-- name     | Cameron Sheffield
+-- position | LB
+-- -[ RECORD 80 ]-------------------
+-- name     | Kyle Bosworth
+-- position | LB
+-- -[ RECORD 81 ]-------------------
+-- name     | Garrett McIntyre
+-- position | DT
+-- -[ RECORD 82 ]-------------------
+-- name     | John Estes
+-- position | C
+-- -[ RECORD 83 ]-------------------
+-- name     | Thomas Austin
+-- position | G
+-- -[ RECORD 84 ]-------------------
+-- name     | Emmanuel Stephens
+-- position | DT
+-- -[ RECORD 85 ]-------------------
+-- name     | Markus White
+-- position | DE
+-- -[ RECORD 86 ]-------------------
+-- name     | Ricardo Matthews
+-- position | DT
+-- -[ RECORD 87 ]-------------------
+-- name     | Quinten Lawrence
+-- position | WR
+-- -[ RECORD 88 ]-------------------
+-- name     | Bilal Powell
+-- position | RB
+-- -[ RECORD 89 ]-------------------
+-- name     | Taylor Boggs
+-- position | C
+-- -[ RECORD 90 ]-------------------
+-- name     | Kamar Aiken
+-- position | WR
+-- -[ RECORD 91 ]-------------------
+-- name     | Dexter Jackson
+-- position | WR
+-- -[ RECORD 92 ]-------------------
+-- name     | Justin Rogers
+-- position | CB
+-- -[ RECORD 93 ]-------------------
+-- name     | Johnny White
+-- position | RB
+-- -[ RECORD 94 ]-------------------
+-- name     | Eron Riley
+-- position | WR
+-- -[ RECORD 95 ]-------------------
+-- name     | Tracy Wilson
+-- position | CB
+-- -[ RECORD 96 ]-------------------
+-- name     | DaNorris Searcy
+-- position | S
+-- -[ RECORD 97 ]-------------------
+-- name     | Chris White
+-- position | LB
+-- -[ RECORD 98 ]-------------------
+-- name     | Sterling Moore
+-- position | CB
+-- -[ RECORD 99 ]-------------------
+-- name     | Chris Hairston
+-- position | T
+-- -[ RECORD 100 ]------------------
+-- name     | Andrew Hawkins
+-- position | WR
+
+
+
+-- 11. The average salary for a DE in the nfl
+SELECT AVG(salary) FROM players WHERE position = 'DE';
+-- -[ RECORD 1 ]-------------
+-- avg | 2161326.377049180328
+
+
+-- 12. The names of all the players on the Buffalo Bills
+SELECT id FROM teams WHERE name = 'Buffalo Bills';
+-- -[ RECORD 1 ]
+-- id | 1
+
+SELECT name FROM players WHERE team_id=1;
+-- -[ RECORD 1 ]------------
+-- name | Mario Williams
+-- -[ RECORD 2 ]------------
+-- name | Drayton Florence
+-- -[ RECORD 3 ]------------
+-- name | Shawne Merriman
+-- -[ RECORD 4 ]------------
+-- name | Dwan Edwards
+-- -[ RECORD 5 ]------------
+-- name | Chris Kelsay
+-- -[ RECORD 6 ]------------
+-- name | Kyle Williams
+-- -[ RECORD 7 ]------------
+-- name | Nick Barnett
+-- -[ RECORD 8 ]------------
+-- name | Spencer Johnson
+-- -[ RECORD 9 ]------------
+-- name | Ryan Fitzpatrick
+-- -[ RECORD 10 ]-----------
+-- name | Steve Johnson
+-- -[ RECORD 11 ]-----------
+-- name | Tyler Thigpen
+-- -[ RECORD 12 ]-----------
+-- name | Lee Evans (Buyout)
+-- -[ RECORD 13 ]-----------
+-- name | Brad Smith
+-- -[ RECORD 14 ]-----------
+-- name | Fred Jackson
+-- -[ RECORD 15 ]-----------
+-- name | Scott Chandler
+-- -[ RECORD 16 ]-----------
+-- name | George Wilson
+-- -[ RECORD 17 ]-----------
+-- name | Erik Pears
+-- -[ RECORD 18 ]-----------
+-- name | Leodis McKelvin
+-- -[ RECORD 19 ]-----------
+-- name | Brian Moorman
+-- -[ RECORD 20 ]-----------
+-- name | Terrence McGee
+-- -[ RECORD 21 ]-----------
+-- name | Marcell Dareus
+-- -[ RECORD 22 ]-----------
+-- name | Chad Rinehart
+-- -[ RECORD 23 ]-----------
+-- name | Kraig Urbik
+-- -[ RECORD 24 ]-----------
+-- name | Rian Lindell
+-- -[ RECORD 25 ]-----------
+-- name | Kirk Morrison
+-- -[ RECORD 26 ]-----------
+-- name | Corey McIntyre
+-- -[ RECORD 27 ]-----------
+-- name | C.J. Spiller
+-- -[ RECORD 28 ]-----------
+-- name | Garrison Sanborn
+-- -[ RECORD 29 ]-----------
+-- name | Eric Wood
+-- -[ RECORD 30 ]-----------
+-- name | Lionel Dotson
+-- -[ RECORD 31 ]-----------
+-- name | Ruvell Martin
+-- -[ RECORD 32 ]-----------
+-- name | Andy Levitre
+-- -[ RECORD 33 ]-----------
+-- name | Jairus Byrd
+-- -[ RECORD 34 ]-----------
+-- name | Jarron Gilbert
+-- -[ RECORD 35 ]-----------
+-- name | Kyle Moore
+-- -[ RECORD 36 ]-----------
+-- name | Aaron Williams
+-- -[ RECORD 37 ]-----------
+-- name | Donald Jones
+-- -[ RECORD 38 ]-----------
+-- name | Fendi Onobun
+-- -[ RECORD 39 ]-----------
+-- name | Kellen Heard
+-- -[ RECORD 40 ]-----------
+-- name | Mike Caussin
+-- -[ RECORD 41 ]-----------
+-- name | Naaman Roosevelt
+-- -[ RECORD 42 ]-----------
+-- name | Alex Carrington
+-- -[ RECORD 43 ]-----------
+-- name | Arthur Moats
+-- -[ RECORD 44 ]-----------
+-- name | Colin Brown
+-- -[ RECORD 45 ]-----------
+-- name | Cordaro Howard
+-- -[ RECORD 46 ]-----------
+-- name | Dan Batten
+-- -[ RECORD 47 ]-----------
+-- name | David Nelson
+-- -[ RECORD 48 ]-----------
+-- name | Marcus Easley
+-- -[ RECORD 49 ]-----------
+-- name | Sam Young
+-- -[ RECORD 50 ]-----------
+-- name | Torell Troup
+-- -[ RECORD 51 ]-----------
+-- name | Kelvin Sheppard
+-- -[ RECORD 52 ]-----------
+-- name | Lee Smith
+-- -[ RECORD 53 ]-----------
+-- name | Chris Hairston
+-- -[ RECORD 54 ]-----------
+-- name | Chris White
+-- -[ RECORD 55 ]-----------
+-- name | DaNorris Searcy
+-- -[ RECORD 56 ]-----------
+-- name | Johnny White
+-- -[ RECORD 57 ]-----------
+-- name | Justin Rogers
+-- -[ RECORD 58 ]-----------
+-- name | Kamar Aiken
+-- -[ RECORD 59 ]-----------
+-- name | Michael Jasper
+
+
+-- 13. The total salary of all players on the New York Giants
+SELECT id FROM teams WHERE name = 'New York Giants';
+-- -[ RECORD 1 ]
+-- id | 18
+
+SELECT SUM(salary) FROM players WHERE team_id=18;
+-- -[ RECORD 1 ]-
+-- sum | 74179466
+
+
+-- 14. The player with the lowest salary on the Green Bay Packers
+SELECT id FROM teams WHERE name ='Green Bay Packers';
+-- -[ RECORD 1 ]
+-- id | 23
+
+SELECT name FROM players WHERE team_id=23 ORDER BY salary ASC LIMIT 1;
+-- -[ RECORD 1 ]--------
+-- name | Shaky Smithson

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
+    <body>
+      <%- include('./partials/nav.ejs') %>
+        <h1>New Pumpkin Page</h1>
+        <form action="/pumpkins" method="POST">
+            Description: <input type="text" name="description" /><br/>
+            Color: <input type="text" name="color" /><br/>
+            Is Ready To Ship: <input type="checkbox" name="readyToShip" /><br/>
+            <input type="submit" value="Create Pumpkin"/>
+        </form>
+        <%- include('./partials/darkmode.ejs')%>
+    </body>
+</html>

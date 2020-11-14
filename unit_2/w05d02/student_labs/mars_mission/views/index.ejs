@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mars Missions</title>
+  </head>
+  <body>
+    <h1>Missions to Mars</h1>
+    <ul>
+      <% for(x=0; x<allMissions.length; x++){ %>
+      <li>
+        <a href='/<%=x%>'><%=allMissions[x].name%></a>
+      </li>
+      <% } %>
+    </ul>
+  </body>
+</html>

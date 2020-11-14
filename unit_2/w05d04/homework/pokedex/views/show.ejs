@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokedex | <%=data.name%></title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Pokesearh - <%=data.name%></h1>
+        <a href="/" class='newPoke'>home</a>
+      </header>
+      <div class="pokedexSearch">
+        <div class="identification column">
+          <h2><%=data.name%></h2>
+          <img src="<%=data.img%>" alt="<%=data.name%>" class="pokedexIMG">
+          <h4>ID #<%=data.id%></h4>
+          <h4>Type: <%=data.type%></h4>
+          <a href="/<%=index%>/edit" class='button pokedexButton'>edit</a>
+        </div>
+        <div class="column statsDamages">
+          <div class="stats">
+            <h4>Stats</h4>
+            <%for(key in data.stats){%>
+              <p><%=key%>: <%=data.stats[key]%></p>
+            <%}%>
+            <h4>Misc</h4>
+            <p>Classification: <%=data.misc.classification%></p>
+            <p>Height: <%=data.misc.height%></p>
+            <p>Weight: <%=data.misc.weight%></p>
+            <p>Capture Rate: <%=data.misc.capturerate%></p>
+          </div>
+          <div class="damages">
+            <h4>Damages</h4>
+            <%for(key in data.damages){%>
+              <p><%=key%>: <%=data.damages[key]%></p>
+            <%}%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

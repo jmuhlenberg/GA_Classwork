@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mongoose Store - Edit <%=item.name%></h1>
+      <form action="/store/<%=item.id%>?_method=PUT" method="POST">
+        Name: <input type="text" name='name' value='<%=item.name%>'><br/>
+        Image: <input type="text" name='image' value='<%=item.image%>'><br/>
+        Price: $<input type="number" min='0' name="price" value='<%=item.price%>'><br/>
+        Details: <input type="textarea" name="details" value='<%=item.details%>'><br/>
+        Quantity: <input type="number" name='quantity' min='0' value='<%=item.quantity%>'><br/>
+        <input type="submit" name="" value="SUBMIT">
+      </form>
+      <nav>
+        <a href="/store">Back to the Main Store Page</a>
+      </nav>
+    </div>
+  </body>
+</html>

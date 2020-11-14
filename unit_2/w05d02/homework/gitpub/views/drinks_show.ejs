@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gitpub <%=selectedDrink.name%></title>
+    <style type="text/css">
+      body {
+        color: blanchedalmond;
+        background-color: steelblue;
+      }
+      img{
+        height: 30vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%=selectedDrink.name%></h1>
+    <h4>$<%=selectedDrink.price%></h4>
+    <img src='<%=selectedDrink.image%>.png' alt="<%=selectedDrink.name%>">
+    <br>
+    <a href="/drinks">Back to Index</a>
+  </body>
+</html>

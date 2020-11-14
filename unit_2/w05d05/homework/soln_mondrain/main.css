@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+div {
+    box-sizing: border-box;
+}
+
+.container {
+    padding-top: 2vw;
+    width: 98vw;
+    margin: auto;
+}
+
+.yellow {
+    background-color: #FFFF07;
+}
+
+.red {
+    background-color: #FC0200;
+}
+
+.blue {
+    background-color: #0801FD;
+}
+
+div[class*="row"]  {
+    display: flex;
+    align-items: stretch;
+}
+
+div[class*="row"] div:not(:last-child) {
+    border-right: 12px solid black;
+} 
+
+
+.row1 {
+    height: 21vw;
+}
+
+.row2 {
+    height: 23.5vw;
+}
+
+.row3 {
+    height: 13.5vw;
+}
+
+.row4 {
+    height: 12vw;
+}

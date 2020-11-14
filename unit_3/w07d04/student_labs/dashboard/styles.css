@@ -1,0 +1,41 @@
+*{
+  border: 1px solid blue;
+}
+
+div{
+  background-color: gray;
+}
+
+.app{
+  display: flex;
+}
+
+
+.dashboard{
+  width: 25%;
+  height: 97vh;
+}
+
+
+
+.analytics{
+  display: flex;
+}
+
+.reviews{
+  width: 32%;
+}
+
+.avgrating{
+  width: 32%;
+}
+
+.sa{
+  width: 32%;
+}
+
+
+
+.webvisitors{
+
+}

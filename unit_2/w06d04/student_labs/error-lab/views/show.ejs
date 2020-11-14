@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
+    <body>
+      <%- include('./partials/nav.ejs') %>
+      <div class="container">
+        <h1>pumpkins Show Page</h1>
+        The <%=pumpkin.description%> pumpkin is <%=pumpkin.color%>.
+        <% if(pumpkin.readyToShip === true) { %>
+            It is ready to ship.
+        <% } else { %>
+            It is <strong>NOT</strong> ready to ship.
+        <% } %>
+        <br>
+        <br>
+        <br>
+        <button type="button" name="button"><a href="/pumpkins/<%=pumpkin._id%>/edit">Edit</a></button>
+        <br>
+        <br>
+        <form action="/pumpkins/<%=pumpkin._id%>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE"/>
+        </form>
+        <br>
+        <button type="button" name="button">
+          <a href="/pumpkins">Back</a>
+        </button>
+      </div>
+        <%- include('./partials/darkmode.ejs')%>
+    </body>
+</html>

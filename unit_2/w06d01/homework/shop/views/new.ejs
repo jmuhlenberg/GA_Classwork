@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mongoose Store - Create New Item</h1>
+      <form action="/store" method="post">
+        Name: <input type="text" name='name' placeholder="Name"><br/>
+        Image: <input type="text" name='image' placeholder="URL"><br/>
+        Price: $<input type="number" min='0' name="price" placeholder="0"><br/>
+        Details: <input type="textarea" name="details" placeholder="Enter details here."><br/>
+        Quantity: <input type="number" name='quantity' min='0' placeholder="0"><br/>
+        <input type="submit" name="" value="SUBMIT">
+      </form>
+      <nav>
+        <a href="/store">Back to the Main Store Page</a>
+      </nav>
+    </div>
+  </body>
+</html>

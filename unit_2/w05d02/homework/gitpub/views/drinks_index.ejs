@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gitpub</title>
+    <style type="text/css">
+      body {
+        color: blanchedalmond;
+        background-color: steelblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Gitpub</h1>
+    <ul> Drinks
+      <% for(x=0; x<allDrinks.length; x++){ %>
+      <li>
+        <a href='/drinks/<%=x%>'><%=allDrinks[x].name%></a>
+      </li>
+      <% } %>
+    </ul>
+    <ul> Food
+      <% for(x=0; x<allFood.length; x++){ %>
+      <li>
+        <a href='/food/<%=x%>'><%=allFood[x].name%></a>
+      </li>
+      <% } %>
+    </ul>
+  </body>
+</html>

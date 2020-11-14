@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <h1>Captain's Log - New Entry</h1>
+    <form action="/logs" method="post">
+      Title: <input type="text" name='title' placeholder="title">
+      Entry: <input type="textarea" name='entry' placeholder="entry">
+      Is the Ship Broken: <input type="checkbox" value="shipIsBroken"><br/>
+      <input type="submit" name="" value="SUBMIT">
+    </form>
+    <nav>
+      <a href="/logs">Back to Log Show Page</a>
+    </nav>
+  </body>
+</html>
